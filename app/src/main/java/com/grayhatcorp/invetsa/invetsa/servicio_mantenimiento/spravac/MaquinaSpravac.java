@@ -856,7 +856,7 @@ public class MaquinaSpravac extends AppCompatActivity implements View.OnClickLis
             maquina = tokens.nextToken();
             id = id_maquina_por_codigo(maquina.trim());
             if (id == -1){                      //Esta condicion para que detenga el proceso de guardado si una maquina no existe en la base de datos
-                maquinas=String.valueOf(id);    //Devolvemos -1
+                maquinas="-1";    //Devolvemos -1
                 return maquinas;
             }else{
                 if (maquinas.equals("")) {

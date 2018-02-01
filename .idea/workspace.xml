@@ -14,7 +14,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b77c46a-523e-42a7-8f23-4f473b372e9e" name="Default" comment="" />
+    <list default="true" id="3b77c46a-523e-42a7-8f23-4f473b372e9e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java" />
+    </list>
     <ignored path="Invetsa.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,7 +53,7 @@
       <file leaf-file-name="SQLite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/Base_de_datos/SQLite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="544">
               <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="55" />
               <folding />
             </state>
@@ -62,36 +65,62 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="25653">
               <caret line="1589" column="17" lean-forward="false" selection-start-line="1589" selection-start-column="17" selection-end-line="1589" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#6234#6235#0" expanded="false" />
-                <element signature="e#6269#6270#0" expanded="false" />
-                <element signature="e#52809#52810#0" expanded="false" />
-                <element signature="e#52849#52850#0" expanded="false" />
-                <element signature="e#53032#53033#0" expanded="false" />
-                <element signature="e#53079#53080#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaquinaSpravac.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MaquinaSpravac.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="996" column="36" lean-forward="false" selection-start-line="996" selection-start-column="26" selection-end-line="996" selection-end-column="36" />
+            <state relative-caret-position="499">
+              <caret line="893" column="86" lean-forward="true" selection-start-line="893" selection-start-column="86" selection-end-line="893" selection-end-column="86" />
               <folding>
+                <element signature="e#25240#25434#0" expanded="true" />
+                <element signature="e#25433#25434#0" expanded="true" />
+                <element signature="e#25478#25672#0" expanded="true" />
+                <element signature="e#25671#25672#0" expanded="true" />
+                <element signature="e#25715#25916#0" expanded="true" />
+                <element signature="e#25915#25916#0" expanded="true" />
+                <element signature="e#27497#27929#0" expanded="true" />
+                <element signature="e#27928#27929#0" expanded="true" />
+                <element signature="e#27978#28192#0" expanded="true" />
+                <element signature="e#28191#28192#0" expanded="true" />
+                <element signature="e#29960#29994#0" expanded="true" />
+                <element signature="e#30026#30062#0" expanded="true" />
+                <element signature="e#45217#45572#0" expanded="true" />
+                <element signature="e#45571#45572#0" expanded="true" />
+                <element signature="e#45629#46377#0" expanded="true" />
+                <element signature="e#46376#46377#0" expanded="true" />
+                <element signature="e#46441#47185#0" expanded="true" />
+                <element signature="e#47184#47185#0" expanded="true" />
                 <element signature="e#48037#48045#0" expanded="true" />
                 <element signature="e#48867#48875#0" expanded="true" />
+                <element signature="e#59504#59916#0" expanded="true" />
+                <element signature="e#59915#59916#0" expanded="true" />
+                <element signature="e#61568#62141#0" expanded="true" />
+                <element signature="e#62140#62141#0" expanded="true" />
+                <element signature="e#62188#63050#0" expanded="true" />
+                <element signature="e#63049#63050#0" expanded="true" />
+                <element signature="e#63939#64515#0" expanded="true" />
+                <element signature="e#64514#64515#0" expanded="true" />
+                <element signature="e#64563#65428#0" expanded="true" />
+                <element signature="e#65427#65428#0" expanded="true" />
+                <element signature="e#69591#69905#0" expanded="true" />
+                <element signature="e#69904#69905#0" expanded="true" />
+                <element signature="e#70606#70931#0" expanded="true" />
+                <element signature="e#70930#70931#0" expanded="true" />
+                <element signature="e#71451#71796#0" expanded="true" />
+                <element signature="e#71795#71796#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Detalle_spravac.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Detalle_spravac.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/Detalle_spravac.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9466">
+            <state relative-caret-position="8806">
               <caret line="564" column="61" lean-forward="false" selection-start-line="564" selection-start-column="61" selection-end-line="564" selection-end-column="61" />
               <folding />
             </state>
@@ -100,14 +129,14 @@
       </file>
       <file leaf-file-name="content_hoja_de_verificacion.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_hoja_de_verificacion.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="35156">
               <caret line="2068" column="56" lean-forward="false" selection-start-line="2068" selection-start-column="55" selection-end-line="2068" selection-end-column="56" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -1950,9 +1979,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_formulario_zootec.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/zootec/Formulario_zootec.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/hoja_verificacion/HojaDeVerificacion.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/Detalle_spravac.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/Base_de_datos/SQLite.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java" />
       </list>
     </option>
   </component>
@@ -1975,6 +2004,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -1986,118 +2017,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectoinvetsaprueba1-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectoinvetsaprueba1-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectoinvetsaprueba1-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invetsa" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectoinvetsaprueba1-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invetsa" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="servicio_mantenimiento" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectoinvetsaprueba1-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invetsa" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="servicio_mantenimiento" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spravac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proyectoinvetsaprueba1-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invetsa" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Base_de_datos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2116,8 +2035,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2125,7 +2042,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../invetsadeploy-master" />
-    <property name="device.picker.selection" value="380119eb60ba9300" />
+    <property name="device.picker.selection" value="Nexus_10_API_25" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
     <property name="android.profiler.active" value="true" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -2229,7 +2146,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517274724929" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517498319626" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2277,7 +2194,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517274724930" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517498319626" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2318,27 +2235,6 @@
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$" />
       <setting name="debug" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2469,7 +2365,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517274724933" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517498319629" />
       </method>
     </configuration>
     <list size="1">
@@ -2734,11 +2630,29 @@
           <properties />
           <option name="timeStamp" value="568" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java</url>
+          <line>988</line>
+          <properties />
+          <option name="timeStamp" value="576" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java</url>
+          <line>581</line>
+          <properties />
+          <option name="timeStamp" value="577" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java</url>
+          <line>1307</line>
+          <properties />
+          <option name="timeStamp" value="578" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="576" />
+      <option name="time" value="579" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2758,23 +2672,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_hoja_de_verificacion.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="91" column="51" lean-forward="false" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_maquina_twin_shot.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_maquina_twin_shot.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="91" column="50" lean-forward="false" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/grayhatcorp/invetsa/invetsa/R.java" />
@@ -2837,13 +2751,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_hoja_verificacion.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/Main_spravac.java">
@@ -2890,33 +2804,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_maquina_spravac.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="91" column="40" lean-forward="false" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/progress_dialogo.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/progress_dialogo.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="55" selection-end-column="10" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sincronizar.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sincronizar.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/Sincronizar.java">
@@ -2945,13 +2859,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_prueba.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/sistema_integral_monitoreo/SistemaIntegralMonitoreo.java">
@@ -2962,34 +2876,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_hoja_verificacion.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_hoja_verificacion.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_hoja_verificacion.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1031">
           <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-26/android/widget/TextView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_prueba.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/hoja_verificacion/Main_hoja_verificacion.java">
@@ -3019,14 +2933,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/Login.java">
@@ -3067,14 +2981,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_maquina_spravac.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="182" column="46" lean-forward="false" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="46" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/zootec/Formulario_zootec.java">
@@ -3086,25 +2999,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_formulario_zootec.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="187" column="39" lean-forward="false" selection-start-line="187" selection-start-column="39" selection-end-line="187" selection-end-column="39" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_maquina_twin_shot.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/twin_shot/MaquinaTwinShot.java">
@@ -3118,53 +3029,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25653">
           <caret line="1589" column="17" lean-forward="false" selection-start-line="1589" selection-start-column="17" selection-end-line="1589" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#6234#6235#0" expanded="false" />
-            <element signature="e#6269#6270#0" expanded="false" />
-            <element signature="e#52809#52810#0" expanded="false" />
-            <element signature="e#52849#52850#0" expanded="false" />
-            <element signature="e#53032#53033#0" expanded="false" />
-            <element signature="e#53079#53080#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_hoja_de_verificacion.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35156">
           <caret line="2068" column="56" lean-forward="false" selection-start-line="2068" selection-start-column="55" selection-end-line="2068" selection-end-column="56" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/Base_de_datos/SQLite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="544">
           <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/Detalle_spravac.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8806">
+          <caret line="564" column="61" lean-forward="false" selection-start-line="564" selection-start-column="61" selection-end-line="564" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/MaquinaSpravac.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="996" column="36" lean-forward="false" selection-start-line="996" selection-start-column="26" selection-end-line="996" selection-end-column="36" />
+        <state relative-caret-position="499">
+          <caret line="893" column="86" lean-forward="true" selection-start-line="893" selection-start-column="86" selection-end-line="893" selection-end-column="86" />
           <folding>
+            <element signature="e#25240#25434#0" expanded="true" />
+            <element signature="e#25433#25434#0" expanded="true" />
+            <element signature="e#25478#25672#0" expanded="true" />
+            <element signature="e#25671#25672#0" expanded="true" />
+            <element signature="e#25715#25916#0" expanded="true" />
+            <element signature="e#25915#25916#0" expanded="true" />
+            <element signature="e#27497#27929#0" expanded="true" />
+            <element signature="e#27928#27929#0" expanded="true" />
+            <element signature="e#27978#28192#0" expanded="true" />
+            <element signature="e#28191#28192#0" expanded="true" />
+            <element signature="e#29960#29994#0" expanded="true" />
+            <element signature="e#30026#30062#0" expanded="true" />
+            <element signature="e#45217#45572#0" expanded="true" />
+            <element signature="e#45571#45572#0" expanded="true" />
+            <element signature="e#45629#46377#0" expanded="true" />
+            <element signature="e#46376#46377#0" expanded="true" />
+            <element signature="e#46441#47185#0" expanded="true" />
+            <element signature="e#47184#47185#0" expanded="true" />
             <element signature="e#48037#48045#0" expanded="true" />
             <element signature="e#48867#48875#0" expanded="true" />
+            <element signature="e#59504#59916#0" expanded="true" />
+            <element signature="e#59915#59916#0" expanded="true" />
+            <element signature="e#61568#62141#0" expanded="true" />
+            <element signature="e#62140#62141#0" expanded="true" />
+            <element signature="e#62188#63050#0" expanded="true" />
+            <element signature="e#63049#63050#0" expanded="true" />
+            <element signature="e#63939#64515#0" expanded="true" />
+            <element signature="e#64514#64515#0" expanded="true" />
+            <element signature="e#64563#65428#0" expanded="true" />
+            <element signature="e#65427#65428#0" expanded="true" />
+            <element signature="e#69591#69905#0" expanded="true" />
+            <element signature="e#69904#69905#0" expanded="true" />
+            <element signature="e#70606#70931#0" expanded="true" />
+            <element signature="e#70930#70931#0" expanded="true" />
+            <element signature="e#71451#71796#0" expanded="true" />
+            <element signature="e#71795#71796#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/grayhatcorp/invetsa/invetsa/servicio_mantenimiento/spravac/Detalle_spravac.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9466">
-          <caret line="564" column="61" lean-forward="false" selection-start-line="564" selection-start-column="61" selection-end-line="564" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
