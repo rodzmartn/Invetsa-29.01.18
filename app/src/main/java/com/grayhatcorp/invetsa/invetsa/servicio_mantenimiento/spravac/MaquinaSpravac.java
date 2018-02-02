@@ -851,14 +851,13 @@ public class MaquinaSpravac extends AppCompatActivity implements View.OnClickLis
     {
         StringTokenizer tokens = new StringTokenizer(texto, ",");
         String maquina, maquinas="";
-        int id=-1;
-        while (tokens.hasMoreTokens()) {
+        int id=0;
+        while (tokens.hasMoreTokens() && id>-1) {
             maquina = tokens.nextToken();
-            id = id_maquina_por_codigo(maquina.trim());
-            if (id == -1){                      //Esta condicion para que detenga el proceso de guardado si una maquina no existe en la base de datos
-                maquinas="-1";    //Devolvemos -1
-                return maquinas;
+            if (maquina.equals(" ")){
+                break;
             }else{
+                id = id_maquina_por_codigo(maquina.trim());
                 if (maquinas.equals("")) {
                     maquinas = String.valueOf(id);
                 }else{
@@ -866,8 +865,12 @@ public class MaquinaSpravac extends AppCompatActivity implements View.OnClickLis
                 }
             }
         }
+        if (id == -1){
+             maquinas = "-1";
+        }
         return maquinas;
     }
+
     private int id_maquina_por_codigo(String texto)
     {
             int id=-1;

@@ -1180,15 +1180,25 @@
                         android:paddingLeft="15sp"
                         android:text="Número de ampollas retiradas por vez para descongelación, máximo 2 ampollas" />
 
+                    <EditText
+                        android:id="@+id/et_manipulacion_y_dilucion_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-110dp"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:hint="observaciones"
+                        android:inputType="textMultiLine"
+                        android:scrollbars="vertical" />
+
                     <CheckBox
                         android:id="@+id/cb_9"
                         android:layout_width="50px"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginStart="65dp"
                         android:ems="4"
                         android:inputType="numberDecimal"
                         android:textColor="#000" />
+
                 </TableRow>
 
                 <TableRow

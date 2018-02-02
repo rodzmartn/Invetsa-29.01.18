@@ -95,7 +95,7 @@ public class Detalle_Hoja_verificacion extends AppCompatActivity implements View
     EditText et_colorante,editTextRecomendaciones;
 
     CheckBox cb_1,cb_2,cb_3,cb_4,cb_5,cb_6,cb_7,cb_8,cb_9,cb_10,cb_11,cb_12,cb_13,cb_14,cb_15,cb_16,cb_17,cb_18,cb_19,cb_20;
-    EditText et_manipulacion_y_dilucion_1,et_manipulacion_y_dilucion_2,et_manipulacion_y_dilucion_20;
+    EditText et_manipulacion_y_dilucion_1,et_manipulacion_y_dilucion_2,et_manipulacion_y_dilucion_9,et_manipulacion_y_dilucion_20;
     TextView tv_productividad,tv_MantenimientoyLimpiesa,tv_ManipulacionDisolucion,tv_IndicedeEficiencia,tv_Puntaje_total;
 
     TextView tv_Sumatoria_vacuna_congelada,tv_Promedio_Vacunadoras_ACCUVAC,tv_puntaje_control_indice;
@@ -185,6 +185,7 @@ public class Detalle_Hoja_verificacion extends AppCompatActivity implements View
         et_maquinas=(EditText)findViewById(R.id.et_Maquinas);
         et_manipulacion_y_dilucion_1=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_1);
         et_manipulacion_y_dilucion_2=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_2);
+        et_manipulacion_y_dilucion_9=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_9);
         et_manipulacion_y_dilucion_20=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_20);
         cb_1=(CheckBox)findViewById(R.id.cb_1);
         cb_2=(CheckBox)findViewById(R.id.cb_2);
@@ -629,7 +630,9 @@ public void cargar_hoja_verificacion(int id_hoja)
                     case "6":set_checkbox_in_value(puntaje,cb_6);break;
                     case "7":set_checkbox_in_value(puntaje,cb_7);break;
                     case "8":set_checkbox_in_value(puntaje,cb_8);break;
-                    case "9":set_checkbox_in_value(puntaje,cb_9);break;
+                    case "9":set_checkbox_in_value(puntaje,cb_9);
+                        et_manipulacion_y_dilucion_9.setText(fila.getString(5));
+                        break;
                     case "10":set_checkbox_in_value(puntaje,cb_10);break;
                     case "11":set_checkbox_in_value(puntaje,cb_11);break;
                     case "12":set_checkbox_in_value(puntaje,cb_12);break;

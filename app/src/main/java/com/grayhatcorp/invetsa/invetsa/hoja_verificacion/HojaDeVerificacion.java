@@ -86,7 +86,6 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
     private final int SELECT_PICTURE = 300;
     private String mPath;
     private Uri path;
-    private Handler mhandler = new Handler();
 
     String[] language ={"Gray Hat Corp","Invetsa","Sofia","Delicia"};
     String[] TemperaturaVacunacion={"24,1°C","24,2°C","24,3°C","27,1°C"};
@@ -106,7 +105,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
     EditText et_colorante,editTextRecomendaciones;
 
     CheckBox cb_1,cb_2,cb_3,cb_4,cb_5,cb_6,cb_7,cb_8,cb_9,cb_10,cb_11,cb_12,cb_13,cb_14,cb_15,cb_16,cb_17,cb_18,cb_19,cb_20;
-    EditText et_manipulacion_y_dilucion_1,et_manipulacion_y_dilucion_2,et_manipulacion_y_dilucion_20;
+    EditText et_manipulacion_y_dilucion_1,et_manipulacion_y_dilucion_2,et_manipulacion_y_dilucion_9,et_manipulacion_y_dilucion_20;
     TextView tv_productividad,tv_MantenimientoyLimpiesa,tv_ManipulacionDisolucion,tv_IndicedeEficiencia,tv_Puntaje_total;
 
     TextView tv_Sumatoria_vacuna_congelada,tv_Promedio_Vacunadoras_ACCUVAC,tv_puntaje_control_indice;
@@ -200,6 +199,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         et_maquinas=(EditText)findViewById(R.id.et_Maquinas);
         et_manipulacion_y_dilucion_1=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_1);
         et_manipulacion_y_dilucion_2=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_2);
+        et_manipulacion_y_dilucion_9=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_9);
         et_manipulacion_y_dilucion_20=(EditText)findViewById(R.id.et_manipulacion_y_dilucion_20);
         cb_1=(CheckBox)findViewById(R.id.cb_1);
         cb_2=(CheckBox)findViewById(R.id.cb_2);
@@ -1680,7 +1680,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                 guardar_manipulacion_dilucion(6, "Jeringa cargada con 2 ml de diluyente para extraer la vacuna ya descongelada ","", get_double_to_checkbox(cb_6), id_hoja);
                 guardar_manipulacion_dilucion(7, "Uso de guantes y protector ocular para manipulación de vacunas congeladas al retirar la vacuna del tanque ","", get_double_to_checkbox(cb_7), id_hoja);
                 guardar_manipulacion_dilucion(8, "Buenas condiciones de funcionamiento del Invetsa-temp de 27 a 37 º C (promedio 32º C)","", get_double_to_checkbox(cb_8), id_hoja);
-                guardar_manipulacion_dilucion(9, "Numero de ampollas retiradas por vez para descongelación, máximo 2 ampollas     2 ampollas","", get_double_to_checkbox(cb_9), id_hoja);
+                guardar_manipulacion_dilucion(9, "Numero de ampollas retiradas por vez para descongelación, máximo 2 ampollas     2 ampollas",et_manipulacion_y_dilucion_9.getText().toString(), get_double_to_checkbox(cb_9), id_hoja);
                 guardar_manipulacion_dilucion(10, "Tiempo máximo para descongelamiento de la ampolla de 1 minuto y reconstitución en diluyente 30 segundos","", get_double_to_checkbox(cb_10), id_hoja);
                 guardar_manipulacion_dilucion(11, "Uso de pajilla de aluminio para descongelamiento de las ampollas en el agua, evita introducir la mano en el agua","", get_double_to_checkbox(cb_11), id_hoja);
                 guardar_manipulacion_dilucion(12, "Favorecer el descongelamiento de la ampolla en forma suave (movimiento circulares y verticales)","", get_double_to_checkbox(cb_12), id_hoja);
@@ -3040,6 +3040,10 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
     }
 
     public void calcular_productividad_puntaje(){
+
+        calcular_pollo_correcto();
+
+        //*******************************************************************************************/
         double promedio=Double.parseDouble(tv_pro_9.getText().toString());
         String puntaje="0";
         SQLite admin = new SQLite(this,
@@ -3076,6 +3080,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         }
         sumar_puntaje_total();
     }
+
     private int id_empresa_por_nombre(String nombre)
     {int id=-1;
         SQLite admin = new SQLite(this,
