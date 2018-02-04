@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -169,6 +170,8 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
     private static final int Date_id = 0;
     private static final int Time_id = 1;
     private static final int Time_id_salida = 2;
+
+    private static final String TAG = "Hoja de verif";
 
     TableRow tr_control_indice_titulo,tr_control_indice_promedio,tr_control_indice_sumatoria;
 
@@ -1070,7 +1073,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
             double numero_controlados = Float.parseFloat(jso_control_indice.get(id + " " + nro_pollos_controlados).toString());
             double numero_no_vacunados = Float.parseFloat(jso_control_indice.get(id + " " + nro_pollos_no_vacunados).toString());
             double numero_heridos = Float.parseFloat(jso_control_indice.get(id + " " + heridos).toString());
-            double numero_mojados = Float.parseFloat(jso_control_indice.get(id + " " + heridos).toString());
+            double numero_mojados = Float.parseFloat(jso_control_indice.get(id + " " + mojados).toString());
             double numero_mala_posicion = Float.parseFloat(jso_control_indice.get(id + " " + mala_posicion).toString());
 
             double sumatoria = (numero_controlados - (numero_no_vacunados + numero_heridos + numero_mojados + numero_mala_posicion));
@@ -2311,48 +2314,48 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                 nombre.setGravity(Gravity.CENTER);
 
                 EditText et_vacunados=new EditText(this);
-                et_vacunados.setText("0");
+                //et_vacunados.setText("0");
                 nombre.setTextColor(Color.BLACK);
                 et_vacunados.setWidth(100);
                 et_vacunados.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 EditText et_puntaje=new EditText(this);
-                et_puntaje.setText("0");
+                //et_puntaje.setText("0");
                 et_puntaje.setWidth(100);
                 et_puntaje.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-                EditText et_pollos_controlados=new EditText(this);
-                et_pollos_controlados.setText("0");
+                final EditText et_pollos_controlados=new EditText(this);
+                //et_pollos_controlados.setText("0");
                 et_pollos_controlados.setWidth(100);
                 et_pollos_controlados.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 EditText et_pollos_no_vacunados=new EditText(this);
-                et_pollos_no_vacunados.setText("0");
+                //et_pollos_no_vacunados.setText("0");
                 et_pollos_no_vacunados.setWidth(100);
                 et_pollos_no_vacunados.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 EditText et_pollos_heridos=new EditText(this);
-                et_pollos_heridos.setText("0");
+                //et_pollos_heridos.setText("0");
                 et_pollos_heridos.setWidth(100);
                 et_pollos_heridos.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 EditText et_pollos_mojados=new EditText(this);
-                et_pollos_mojados.setText("0");
+                //et_pollos_mojados.setText("0");
                 et_pollos_mojados.setWidth(100);
                 et_pollos_mojados.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 EditText et_mala_posicion=new EditText(this);
-                et_mala_posicion.setText("0");
+                //et_mala_posicion.setText("0");
                 et_mala_posicion.setWidth(100);
                 et_mala_posicion.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 final EditText et_vacunados_correctamente=new EditText(this);
-                et_vacunados_correctamente.setText("0");
+                //et_vacunados_correctamente.setText("0");
                 et_vacunados_correctamente.setWidth(100);
                 et_vacunados_correctamente.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 final EditText et_eficiencia=new EditText(this);
-                et_eficiencia.setText("0");
+                //et_eficiencia.setText("0");
                 et_eficiencia.setWidth(100);
                 et_eficiencia.setInputType(InputType.TYPE_CLASS_NUMBER);
 
@@ -2459,6 +2462,38 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                     }
                 });
 
+                /*campoBusqueda.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+
+                    }
+                });*/
+
+                /*et_pollos_controlados.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        if (!hasFocus){
+                            try {
+                                jso_control_indice.remove(id + " " + 3);
+                                if(v.toString().length()>0 && !v.toString().equals("")) {
+                                    jso_control_indice.put(id + " " + 3, v.toString());
+                                }
+                                else{
+                                    jso_control_indice.put(id + " " + 3, "0");
+                                }
+                                sumatoria_control_indice(tv_sum_3,tv_pro_3,3);
+                                calculat_eficiencia(id,3,8,9,et_eficiencia);
+                                sumatoria_control_indice_eficiencia(tv_sum_9,tv_pro_9,9);
+                                calcular_pollo_correcto(id, 3, 4,5, 6,7, et_vacunados_correctamente);
+                            }catch (Exception e)
+                            {
+                                //Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                                Log.e(TAG, "onFocusChange: ",e );
+                            }
+                        }
+                    }
+                });*/
+
                 et_pollos_controlados.addTextChangedListener(new TextWatcher() {
 
                     @Override
@@ -2479,8 +2514,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                             if(s.length()>0 && !s.equals("")) {
                                 jso_control_indice.put(id + " " + 3, s);
                             }
-                            else
-                            {
+                            else{
                                 jso_control_indice.put(id + " " + 3, "0");
                             }
                             sumatoria_control_indice(tv_sum_3,tv_pro_3,3);
@@ -2489,7 +2523,8 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                             calcular_pollo_correcto(id, 3, 4,5, 6,7, et_vacunados_correctamente);
                         }catch (Exception e)
                         {
-
+                            //Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                            Log.e(TAG, "onFocusChange: ",e );
                         }
                     }
                 });
@@ -2499,6 +2534,16 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                     @Override
                     public void afterTextChanged(Editable s) {
                         // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                        // TODO Auto-generated method stub
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
                         try {
                             jso_control_indice.remove(id + " " + 4);
                             if(s.length()>0 && s.equals("")==false) {
@@ -2510,11 +2555,20 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                             }
                             sumatoria_control_indice(tv_sum_4,tv_pro_4,4);
                             calcular_pollo_correcto(id, 3, 4,5,6,7, et_vacunados_correctamente);
-
+                            calculat_eficiencia(id,3,8,9,et_eficiencia);
+                            sumatoria_control_indice_eficiencia(tv_sum_9,tv_pro_9,9);
                         }catch (Exception e)
                         {
 
                         }
+                    }
+                });
+
+                et_pollos_heridos.addTextChangedListener(new TextWatcher() {
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        // TODO Auto-generated method stub
                     }
 
                     @Override
@@ -2524,30 +2578,6 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        /*try {
-                            jso_control_indice.remove(id + " " + 4);
-                            if(s.length()>0 && s.equals("")==false) {
-                                jso_control_indice.put(id + " " + 4, s);
-                            }
-                            else
-                            {
-                                jso_control_indice.put(id + " " + 4, "0");
-                            }
-                            sumatoria_control_indice(tv_sum_4,tv_pro_4,4);
-                            calcular_pollo_correcto(id, 3, 4,5,7, et_vacunados_correctamente);
-
-                        }catch (Exception e)
-                        {
-
-                        }*/
-                    }
-                });
-
-                et_pollos_heridos.addTextChangedListener(new TextWatcher() {
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        // TODO Auto-generated method stub
                         try {
                             jso_control_indice.remove(id + " " + 5);
                             if(s.length()>0 && s.equals("")==false) {
@@ -2559,36 +2589,13 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                             }
                             sumatoria_control_indice(tv_sum_5,tv_pro_5,5);
                             calcular_pollo_correcto(id, 3, 4,5, 6,7, et_vacunados_correctamente);
+                            calculat_eficiencia(id,3,8,9,et_eficiencia);
+                            sumatoria_control_indice_eficiencia(tv_sum_9,tv_pro_9,9);
 
                         }catch (Exception e)
                         {
 
                         }
-                    }
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                        // TODO Auto-generated method stub
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        /*try {
-                            jso_control_indice.remove(id + " " + 5);
-                            if(s.length()>0 && s.equals("")==false) {
-                                jso_control_indice.put(id + " " + 5, s);
-                            }
-                            else
-                            {
-                                jso_control_indice.put(id + " " + 5, "0");
-                            }
-                            sumatoria_control_indice(tv_sum_5,tv_pro_5,5);
-                            calcular_pollo_correcto(id, 3, 4,5,7, et_vacunados_correctamente);
-
-                        }catch (Exception e)
-                        {
-
-                        }*/
                     }
                 });
 
@@ -2616,7 +2623,9 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                                 jso_control_indice.put(id + " " + 6, "0");
                             }
                             sumatoria_control_indice(tv_sum_6,tv_pro_6,6);
-                            //calcular_pollo_correcto(id, 3, 4,5,7, et_vacunados_correctamente);
+                            calcular_pollo_correcto(id, 3, 4,5, 6,7, et_vacunados_correctamente);
+                            calculat_eficiencia(id,3,8,9,et_eficiencia);
+                            sumatoria_control_indice_eficiencia(tv_sum_9,tv_pro_9,9);
 
                         }catch (Exception e)
                         {
@@ -2650,7 +2659,8 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                             }
                             sumatoria_control_indice(tv_sum_7,tv_pro_7,7);
                             calcular_pollo_correcto(id, 3, 4,5, 6,7, et_vacunados_correctamente);
-
+                            calculat_eficiencia(id,3,8,9,et_eficiencia);
+                            sumatoria_control_indice_eficiencia(tv_sum_9,tv_pro_9,9);
                         }catch (Exception e)
                         {
 
@@ -3041,12 +3051,60 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
 
     public void calcular_productividad_puntaje(){
 
-        calcular_pollo_correcto();
-
-        //*******************************************************************************************/
         double promedio=Double.parseDouble(tv_pro_9.getText().toString());
         String puntaje="0";
-        SQLite admin = new SQLite(this,
+
+        if (promedio==0){
+            puntaje = "5.50";
+        }else if (promedio<=99.99 && promedio>=99.85){
+            puntaje = "5.20";
+        }else if (promedio<=99.84 && promedio>=99.70) {
+            puntaje = "5.00";
+        }else if (promedio<=99.69 && promedio>=99.55) {
+            puntaje = "4.75";
+        }else if (promedio<=99.54 && promedio>=99.40) {
+            puntaje = "4.50";
+        }else if (promedio<=99.39 && promedio>=99.25){
+            puntaje = "4.25";
+        }else if (promedio<=99.24 && promedio>=99.10){
+            puntaje = "4.00";
+        }else if (promedio<=99.09 && promedio>=98.95){
+            puntaje = "3.75";
+        }else if (promedio<=98.94 && promedio>=98.80){
+            puntaje = "3.50";
+        }else if (promedio<=98.79 && promedio>=98.65){
+            puntaje = "3.25";
+        }else if (promedio<=98.64 && promedio>=98.50){
+            puntaje = "3.00";
+        }else if (promedio<=98.49 && promedio>=98.35){
+            puntaje = "2.75";
+        }else if (promedio<=98.34 && promedio>=98.20){
+            puntaje = "2.50";
+        }else if (promedio<=98.19 && promedio>=98.05){
+            puntaje = "2.25";
+        }else if (promedio<=98.04 && promedio>=97.90) {
+            puntaje = "2.00";
+        }else if (promedio<=97.89 && promedio>=97.75) {
+            puntaje = "1.75";
+        }else if (promedio<=97.74 && promedio>=97.60) {
+            puntaje = "1.50";
+        }else if (promedio<=97.59 && promedio>=97.45) {
+            puntaje = "1.25";
+        }else if (promedio<=97.44 && promedio>=97.30) {
+            puntaje = "1.00";
+        }else if (promedio<=97.29 && promedio>=97.15) {
+            puntaje = "0.75";
+        }else if (promedio<=97.14 && promedio>=97.00) {
+            puntaje = "0.50";
+        }else if (promedio<=96.99 && promedio>=96.85) {
+            puntaje = "0.25";
+        }else if (promedio<=96.84) {
+            puntaje = "0.00";
+        }
+        //*******************************************************************************************/
+        //double promedio=Double.parseDouble(tv_pro_9.getText().toString());
+
+        /*SQLite admin = new SQLite(this,
                 "invetsa", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
         Cursor fila = bd.rawQuery("select puntaje from indice_eficiencia where '"+promedio+"'>=minimo and '"+promedio+"'<= maximo", null);
@@ -3055,11 +3113,13 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
 
            puntaje= fila.getString(0);
         }
-        bd.close();
+        bd.close();*/
         tv_puntaje_control_indice.setText(puntaje);
         tv_IndicedeEficiencia.setText(puntaje);
 
         //verificando la puntuacion..
+
+        //(promedio pollos vacunados por hora + 10%)-(promedio... -10%)
         double productivida=Double.parseDouble(tv_pro_1.getText().toString());
         double minimo=0;
         double maximo=0;
