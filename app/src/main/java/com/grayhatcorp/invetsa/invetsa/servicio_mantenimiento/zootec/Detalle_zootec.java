@@ -34,6 +34,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -62,6 +63,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.Normalizer;
 import java.util.Calendar;
+import java.util.StringTokenizer;
 
 public class Detalle_zootec extends  AppCompatActivity  implements View.OnClickListener {
     ArrayAdapter<String> adapter;
@@ -82,7 +84,8 @@ public class Detalle_zootec extends  AppCompatActivity  implements View.OnClickL
     private static final int Time_id = 1;
     private static final int Time_id_salida = 2;
 
-    AutoCompleteTextView autoCompania,autoMaquina,autoDireccion,autoPlantaEncubacion;
+    MultiAutoCompleteTextView autoMaquina;
+    AutoCompleteTextView autoCompania,/*autoMaquina,*/autoDireccion,autoPlantaEncubacion;
     EditText encargado,ultima_visita,JefePlanta;
     TextView fecha,hora_ingreso,hora_salida;
     EditText observacion_inspeccion,piezas_cambiadas_inspeccion,observacion_funcionamiento,frecuencia_uso_funcionamiento,observacion_desinfeccion,cantidad_aves_desinfeccion;
@@ -208,7 +211,7 @@ public class Detalle_zootec extends  AppCompatActivity  implements View.OnClickL
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         autoCompania = (AutoCompleteTextView)findViewById(R.id.autoCompania);
-        autoMaquina = (AutoCompleteTextView)findViewById(R.id.autoMaquina);
+        autoMaquina = (MultiAutoCompleteTextView)findViewById(R.id.autoMaquina);
         autoDireccion=(AutoCompleteTextView)findViewById(R.id.autoDireccion);
         encargado=(EditText)findViewById(R.id.TextViewEncargado);
         hora_ingreso=(TextView)findViewById(R.id.et_hora_ingreso);
@@ -712,7 +715,8 @@ public class Detalle_zootec extends  AppCompatActivity  implements View.OnClickL
             String estado =(fila.getString(19));
 
             autoCompania.setText(fila.getString(20));
-            autoMaquina.setText(fila.getString(21));
+            //autoMaquina.setText(fila.getString(21));
+            autoMaquina.setText(Concatenador_maquinas(id_maquina));
 
             bm_firma_1=imagen_en_vista(firma_jefe);
             bm_firma_2=imagen_en_vista(firma_invetsa);
@@ -1414,6 +1418,44 @@ public class Detalle_zootec extends  AppCompatActivity  implements View.OnClickL
             }catch (Exception e)
             {
                 Log.e("id mantenimiento",""+e);
+            }
+
+        }
+        bd.close();
+        return id;
+    }
+
+    private String Concatenador_maquinas(String ids)   // Con esto tomamos los ids y los transformamos a maquinas
+    {
+        StringTokenizer tokens = new StringTokenizer(ids, ",");
+        String maquina="", maquinas = "";
+        while (tokens.hasMoreTokens()) {
+            maquina = tokens.nextToken();
+            maquina= id_por_maquina(maquina);
+            if (!maquina.equals("") && !maquina.equals("-1"))
+            {
+                if (maquinas.equals("")) {
+                    maquinas = maquina.trim();
+                } else {
+                    maquinas = maquinas + "," + maquina.trim();
+                }
+            }
+        }
+        return maquinas;
+    }
+
+    private String id_por_maquina(String texto)
+    {
+        String id="-1";
+        SQLite admin = new SQLite(this,
+                "invetsa", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        Cursor fila = bd.rawQuery("select codigo from maquina where id='"+texto+"'", null);
+        if (fila.moveToFirst()) {  //si ha devuelto 1 fila, vamos al primero (que es el unico)
+            String codigo= fila.getString(0);
+            if(!codigo.equals("") && !codigo.equals("0") )
+            {
+                id=codigo;
             }
 
         }

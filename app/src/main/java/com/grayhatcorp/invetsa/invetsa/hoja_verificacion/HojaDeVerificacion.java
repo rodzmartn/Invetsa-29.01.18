@@ -2732,6 +2732,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                         }
                     }
                 });
+
             } //fin de la condicion de obtencion de ESTADO=true
 
         }// fin de While. para recorrer toda la lista de Vacunadores seleccionados...
@@ -2758,12 +2759,17 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
                     int nro_heridos=Integer.parseInt(jso_control_indice.get(id+" 5").toString());
                     int nro_mojados=Integer.parseInt(jso_control_indice.get(id+" 6").toString());
                     int nro_mala_posicion=Integer.parseInt(jso_control_indice.get(id+" 7").toString());
-                    int nro_pollos_vacunados_correctamente=Integer.parseInt(jso_control_indice.get(id+" 8").toString());
+                    //int nro_pollos_vacunados_correctamente=Integer.parseInt(jso_control_indice.get(id+" 8").toString());
+                    String nro_pollos_vacunados_correctamente=jso_control_indice.get(id+" 8").toString();
                     String indice_eficiencia= jso_control_indice.get(id+" 9").toString();
+                    //int sumatoria = Integer.parseInt(jso_control_indice.get(id+" 10").toString());
+                    //String promedio = jso_control_indice.get(id+" 11").toString();
                     int id_hoja_verificacion=id_hoja;
                     int id_vacunador=Integer.parseInt(id);
 
                     guardar_control_indice(item,nro_pollos_vacunado,puntaje,nro_pollos_controlados,nro_pollos_no_vacunados,nro_heridos,nro_mojados,nro_mala_posicion,nro_pollos_vacunados_correctamente, indice_eficiencia, id_hoja_verificacion,id_vacunador);
+                    guardar_control_indice_sumpro(tv_sum_1.getText().toString(),tv_sum_2.getText().toString(),tv_sum_3.getText().toString(),tv_sum_4.getText().toString(),tv_sum_5.getText().toString(),tv_sum_6.getText().toString(),tv_sum_7.getText().toString(),tv_sum_8.getText().toString(),tv_sum_9.getText().toString(),
+                            tv_pro_1.getText().toString(),tv_pro_2.getText().toString(),tv_pro_3.getText().toString(),tv_pro_4.getText().toString(),tv_pro_5.getText().toString(),tv_pro_6.getText().toString(),tv_pro_7.getText().toString(),tv_pro_8.getText().toString(),tv_pro_9.getText().toString());
 
                 } catch (JSONException e) {
                     Log.e("SqLite vacunador ",""+e);
@@ -2777,7 +2783,40 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         }
         bd.close();
     }
+public void guardar_control_indice_sumpro(String sum1,String sum2,String sum3,String sum4,String sum5,String sum6,String sum7,String sum8,String sum9,
+                                          String pro1,String pro2,String pro3,String pro4,String pro5,String pro6,String pro7,String pro8,String pro9){
 
+    SQLite admin = new SQLite(this, "invetsa", null, 1);
+    SQLiteDatabase bd = admin.getWritableDatabase();
+    ContentValues registro = new ContentValues();
+    try {
+        registro.put("sum1", String.valueOf(sum1));
+        registro.put("sum2", String.valueOf(sum2));
+        registro.put("sum3", String.valueOf(sum3));
+        registro.put("sum4", String.valueOf(sum4));
+        registro.put("sum5", String.valueOf(sum5));
+        registro.put("sum6", String.valueOf(sum6));
+        registro.put("sum7", String.valueOf(sum7));
+        registro.put("sum8", String.valueOf(sum8));
+        registro.put("sum9", String.valueOf(sum9));
+        registro.put("pro1", String.valueOf(pro1));
+        registro.put("pro2", String.valueOf(pro2));
+        registro.put("pro3", String.valueOf(pro3));
+        registro.put("pro4", String.valueOf(pro4));
+        registro.put("pro5", String.valueOf(pro5));
+        registro.put("pro6", String.valueOf(pro6));
+        registro.put("pro7", String.valueOf(pro7));
+        registro.put("pro8", String.valueOf(pro8));
+        registro.put("pro9", String.valueOf(pro9));
+        registro.put("imei", imei);
+        bd.insert("peso", null, registro);
+
+    } catch (Exception e) {
+        Log.e("sql", "" + e);
+    }
+
+    bd.close();
+}
 
     public void guardar_viabilidad_celular(int id,EditText antibiotico,EditText dosis,EditText tiempo,EditText vc,int id_hoja)
     {
@@ -3117,6 +3156,9 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         tv_puntaje_control_indice.setText(puntaje);
         tv_IndicedeEficiencia.setText(puntaje);
 
+        //Preparando sumatoria y promedio
+
+
         //verificando la puntuacion..
 
         //(promedio pollos vacunados por hora + 10%)-(promedio... -10%)
@@ -3394,6 +3436,8 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         promedio=sumatoria/count;
         tv_sumatoria.setText(String.format("%.2f", sumatoria));
         tv_promedio.setText(String.format("%.2f", promedio));
+        //Colocar jso_control_indice.put aqui para guardar los valores de sumatoria y promedio?
+        jso_control_indice.put()
         bd.close();
     }
 
@@ -3446,7 +3490,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         bd.close();
     }
 
-    public void guardar_control_indice(int id,int nro_pollos_vacunado,int puntaje,int nro_pollos_controlados,int nro_pollos_no_vacunados,int nro_heridos, int nro_mojados, int nro_mala_posicion, int nro_pollos_vacunados_correctamente, String  indice_eficiencia, int id_hoja_verificacion, int id_vacunador)
+    public void guardar_control_indice(int id,int nro_pollos_vacunado,int puntaje,int nro_pollos_controlados,int nro_pollos_no_vacunados,int nro_heridos, int nro_mojados, int nro_mala_posicion, String nro_pollos_vacunados_correctamente, String  indice_eficiencia, int id_hoja_verificacion, int id_vacunador)
     {
         SQLite admin = new SQLite(this,"invetsa", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
@@ -3462,6 +3506,8 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
             registro.put("nro_mala_posicion", String.valueOf( nro_mala_posicion));
             registro.put("nro_pollos_vacunados_correctamente", String.valueOf(nro_pollos_vacunados_correctamente ));
             registro.put("indice_eficiencia",  indice_eficiencia );
+            //registro.put("sumatoria", sumatoria);
+            //registro.put("promedio", promedio);
             registro.put("id_hoja_verificacion", String.valueOf( id_hoja_verificacion));
             registro.put("id_vacunador", String.valueOf(id_vacunador ));
             registro.put("imei", imei);
@@ -3518,7 +3564,7 @@ public class HojaDeVerificacion extends AppCompatActivity implements View.OnClic
         } else if (id_tecnico == -1) {
             sw = false;
             mensaje_ok_error("No existe ningun dato del Tecnico." + Html.fromHtml("<br><b>VUELVA A INICIAR SESION</b>"));
-        } else if (imei.equals("") == true) {
+        } else if (imei.equals("")) {
             sw = false;
             mensaje_ok_error("Habilitar los permisos para obtener el " + Html.fromHtml("<b>IMEI</b>") + " del celular.");
         }

@@ -12,10 +12,12 @@
     </string-array>
 
     <string-array name="Edad">
+        <item>19</item>
         <item>21</item>
         <item>25</item>
         <item>28</item>
         <item>35</item>
+        <item>42</item>
     </string-array>
 
     <string-array name="Sexo">

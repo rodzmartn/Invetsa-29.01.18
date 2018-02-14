@@ -190,7 +190,7 @@ public class Main_twin_shot extends AppCompatActivity implements View.OnClickLis
             if (fila.moveToFirst()) {  //si ha devuelto 1 fila, vamos al primero (que es el unico)
 
                 do {
-                    clsServicio_mantenimiento hi = new clsServicio_mantenimiento(Integer.parseInt(fila.getString(0)), fila.getString(1),  fila.getString(2), fila.getString(3), Integer.parseInt(fila.getString(4)), Integer.parseInt(fila.getString(5)), fila.getString(6), fila.getString(7),Integer.parseInt(fila.getString(8)));
+                    clsServicio_mantenimiento hi = new clsServicio_mantenimiento(Integer.parseInt(fila.getString(0)), fila.getString(1),  fila.getString(2), fila.getString(3), fila.getString(4), Integer.parseInt(fila.getString(5)), fila.getString(6), fila.getString(7),Integer.parseInt(fila.getString(8)));
                     historial.add(hi);
                 } while (fila.moveToNext());
                 tv_mensaje.setVisibility(View.INVISIBLE);

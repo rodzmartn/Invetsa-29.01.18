@@ -307,7 +307,7 @@ public class Detalle_sistema_integral extends AppCompatActivity implements View.
             e.printStackTrace();
         } catch (DocumentException e) {
             e.printStackTrace();
-        }
+        }*/
 
         try {
             Bundle bundle=getIntent().getExtras();
@@ -321,7 +321,7 @@ public class Detalle_sistema_integral extends AppCompatActivity implements View.
             finish();
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1274,10 +1274,16 @@ public class Detalle_sistema_integral extends AppCompatActivity implements View.
         autoEmpresa.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {//antes q haya cambiado el texto
-                String id_empresa = get_id_tabla("select id from empresa where nombre='" + autoEmpresa.getText().toString() + "'");
-                if(id_empresa.length()>0) {
-                    cargar_compania_en_la_lista("select nombre from granja where id_empresa=" + id_empresa, sp_granja);
-                    cargar_compania_en_la_lista("select zona from granja where id_empresa="+id_empresa,sp_zona);
+                try{
+                    String id_empresa = get_id_tabla("select id from empresa where nombre='" + autoEmpresa.getText().toString() + "'");
+                    if(id_empresa.length()>0) {
+                        cargar_compania_en_la_lista("select nombre from granja where id_empresa=" + id_empresa, sp_granja);
+                        cargar_compania_en_la_lista("select zona from granja where id_empresa=" + id_empresa, sp_zona);
+
+                    }
+
+                }catch(Exception e){
+                    Log.e("DSIM", "beforeTextChanged: autoEmpresa.cargar_compañia",e );
                 }
             }
 
@@ -1298,12 +1304,17 @@ public class Detalle_sistema_integral extends AppCompatActivity implements View.
         sp_granja.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String id_empresa = get_id_tabla("select id from empresa where nombre='" + autoEmpresa.getText().toString() + "'");
-                String id_granja=get_id_tabla("select id from granja where nombre='" + sp_granja.getSelectedItem().toString() + "' and id_empresa='"+id_empresa+"'");
+                try{
+                    String id_empresa = get_id_tabla("select id from empresa where nombre='" + autoEmpresa.getText().toString() + "'");
+                    String id_granja=get_id_tabla("select id from granja where nombre='" + sp_granja.getSelectedItem().toString() + "' and id_empresa='"+id_empresa+"'");
 
-                if(id_empresa.length()>0 && id_granja.length()>0) {
-                    cargar_compania_en_la_lista("select codigo from galpon where id_granja=" + id_granja, sp_galpon);
+                    if(id_empresa.length()>0 && id_granja.length()>0) {
+                        cargar_compania_en_la_lista("select codigo from galpon where id_granja=" + id_granja, sp_galpon);
+                    }
+                }catch(Exception e){
+                    Log.e("DSIM", "onItemSelected: sp_granja", e);
                 }
+
             }
 
             @Override
@@ -1315,12 +1326,17 @@ public class Detalle_sistema_integral extends AppCompatActivity implements View.
         sp_galpon.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String id_empresa = get_id_tabla("select id from empresa where nombre='" + autoEmpresa.getText().toString() + "'");
-                String id_granja=get_id_tabla("select id from granja where nombre='" + sp_granja.getSelectedItem().toString() + "' and id_empresa='"+id_empresa+"'");
+                try{
+                    String id_empresa = get_id_tabla("select id from empresa where nombre='" + autoEmpresa.getText().toString() + "'");
+                    String id_granja=get_id_tabla("select id from granja where nombre='" + sp_granja.getSelectedItem().toString() + "' and id_empresa='"+id_empresa+"'");
 
-                if(id_empresa.length()>0 && id_granja.length()>0) {
-                    cargar_compania_en_la_lista("select zona from granja where id=" + id_granja, sp_zona);
+                    if(id_empresa.length()>0 && id_granja.length()>0) {
+                        cargar_compania_en_la_lista("select zona from granja where id=" + id_granja, sp_zona);
+                    }
+                }catch (Exception e){
+                    Log.e("Invetsa", "sp_galpon.setOnItemSelected ", e);
                 }
+
             }
 
             @Override
@@ -1401,44 +1417,26 @@ public class Detalle_sistema_integral extends AppCompatActivity implements View.
             String revision=fila.getString(2);
 
             switch (fila.getString(3)){
+                case "19":  edad.setSelection(0);
+                    break;
                 case "21":  edad.setSelection(1);
                     break;
-                case "22":  edad.setSelection(2);
+                case "25":  edad.setSelection(2);
                     break;
-                case "23":  edad.setSelection(3);
+                case "28":  edad.setSelection(3);
                     break;
-                case "24":  edad.setSelection(4);
+                case "35":  edad.setSelection(4);
                     break;
-                case "25":  edad.setSelection(5);
-                    break;
-                case "26":  edad.setSelection(6);
-                    break;
-                case "27":  edad.setSelection(7);
-                    break;
-                case "28":  edad.setSelection(8);
-                    break;
-                case "29":  edad.setSelection(9);
-                    break;
-                case "30":  edad.setSelection(10);
-                    break;
-                case "31":  edad.setSelection(11);
-                    break;
-                case "32":  edad.setSelection(12);
-                    break;
-                case "33":  edad.setSelection(13);
-                    break;
-                case "34":  edad.setSelection(14);
-                    break;
-                case "35":  edad.setSelection(15);
+                case "42":  edad.setSelection(5);
                     break;
             }
 
             switch (fila.getString(4)){
-                case "Macho":  sexo.setSelection(1);
+                case "Macho":  sexo.setSelection(0);
                     break;
-                case "Hembra":  sexo.setSelection(2);
+                case "Hembra":  sexo.setSelection(1);
                     break;
-                case "Mixto":  sexo.setSelection(3);
+                case "Mixto":  sexo.setSelection(2);
                     break;
             }
 

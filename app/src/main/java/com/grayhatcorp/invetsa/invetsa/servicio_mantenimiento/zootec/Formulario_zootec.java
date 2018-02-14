@@ -68,6 +68,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.StringTokenizer;
 
 public class Formulario_zootec extends AppCompatActivity implements  OnClickListener {
     ArrayAdapter<String> adapter;
@@ -774,7 +775,8 @@ public class Formulario_zootec extends AppCompatActivity implements  OnClickList
             id_servicio=perfil.getInt("id_servicio_mantenimiento",1);
         }
 
-        int id_maquina=id_maquina_por_codigo(autoMaquina.getText().toString());
+        //int id_maquina=id_maquina_por_codigo(autoMaquina.getText().toString());
+        String id_maquina=concatenador_maquinas(autoMaquina.getText().toString());
 
         int id_compania=id_compania_por_nombre(autoCompania.getText().toString());
 
@@ -795,7 +797,7 @@ public class Formulario_zootec extends AppCompatActivity implements  OnClickList
             String codigo = getString(R.string.codigo_zootec);
             String revision = getString(R.string.revision_zootec);
 
-            sw_zo = guardar_servicio_mantenimiento(id_servicio, fecha.getText().toString(), hora_ingreso.getText().toString(), hora_salida.getText().toString(), codigo, revision, DIRECCION_FIRMA_JEFE, DIRECCION_FIRMA_INVETSA, String.valueOf(id_maquina), String.valueOf(id_tecnico), String.valueOf(id_compania), "ZOOTEC",DIRECCION_FOTO_JEFE,
+            sw_zo = guardar_servicio_mantenimiento(id_servicio, fecha.getText().toString(), hora_ingreso.getText().toString(), hora_salida.getText().toString(), codigo, revision, DIRECCION_FIRMA_JEFE, DIRECCION_FIRMA_INVETSA, id_maquina, String.valueOf(id_tecnico), String.valueOf(id_compania), "ZOOTEC",DIRECCION_FOTO_JEFE,
                     autoPlantaEncubacion.getText().toString(),autoDireccion.getText().toString(),encargado.getText().toString(),ultima_visita.getText().toString(),JefePlanta.getText().toString());
             if (sw_zo) {
                 int id_inspeccion = 1;
@@ -1242,6 +1244,30 @@ public class Formulario_zootec extends AppCompatActivity implements  OnClickList
         return id;
     }
 
+    private String concatenador_maquinas(String texto)
+    {
+        StringTokenizer tokens = new StringTokenizer(texto, ",");
+        String maquina, maquinas="";
+        int id=0;
+        while (tokens.hasMoreTokens() && id>-1) {
+            maquina = tokens.nextToken();
+            if (maquina.equals(" ")){
+                break;
+            }else{
+                id = id_maquina_por_codigo(maquina.trim());
+                if (maquinas.equals("")) {
+                    maquinas = String.valueOf(id);
+                }else{
+                    maquinas= maquinas + "," + id;
+                }
+            }
+        }
+        if (id == -1){
+            maquinas = "-1";
+        }
+        return maquinas;
+    }
+
     private int id_maquina_por_codigo(String texto)
     {int id=-1;
         SQLite admin = new SQLite(this,
@@ -1608,12 +1634,12 @@ public class Formulario_zootec extends AppCompatActivity implements  OnClickList
         }
 
     }
-    private boolean verificar_datos_se(int id_maquina, int id_compania, int id_tecnico, String imei, Bitmap bm_firma_1, Bitmap bm_firma_2) {
+    private boolean verificar_datos_se(String id_maquina, int id_compania, int id_tecnico, String imei, Bitmap bm_firma_1, Bitmap bm_firma_2) {
         boolean sw = true;
         if (id_compania == -1) {
             sw = false;
             mensaje_ok_error("Por favor complete el campo de  " + Html.fromHtml("<b>COMPAÑIA</b>"));
-        } else if (id_maquina == -1) {
+        } else if (id_maquina.equals("-1")) {
             sw = false;
             mensaje_ok_error("Por favor complete el campo de  " + Html.fromHtml("<b>MAQUINA</b>"));
         } else if (bm_firma_1 == null) {

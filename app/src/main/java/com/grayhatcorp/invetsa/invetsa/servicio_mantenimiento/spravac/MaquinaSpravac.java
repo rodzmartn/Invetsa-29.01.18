@@ -669,7 +669,7 @@ public class MaquinaSpravac extends AppCompatActivity implements View.OnClickLis
         bd.insert("inspeccion_funcionamiento", null, registro);
 */
             }
-            if (sw_se == true) {
+            if (sw_se) {
                 mensaje_ok_cerrar("Se guardo Correctamente.");
             } else {
                 mensaje_ok_error("Por favor complete los campos.");

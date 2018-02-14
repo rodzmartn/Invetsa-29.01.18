@@ -10,7 +10,7 @@ public class clsServicio_mantenimiento {
     private String fecha;
     private String codigo;
     private String revision;
-    private int id_maquina;
+    private String id_maquina;
     private int id_compania;
     private String nombre_maquina;
     private String nombre_compania;
@@ -24,14 +24,14 @@ public class clsServicio_mantenimiento {
         this.setFecha("");
         this.setCodigo("");
         this.setRevision("");
-        this.setId_maquina(0);
+        this.setId_maquina("");
         this.setId_compania(0);
         this.setNombre_maquina("");
         this.setNombre_compania("");
         setEstado(0);
     }
 
-    public clsServicio_mantenimiento(int id,String fecha,String codigo,String revision,int id_maquina,int id_compania,String nombre_maquina,String nombre_compania,int estado )
+    public clsServicio_mantenimiento(int id,String fecha,String codigo,String revision,String id_maquina,int id_compania,String nombre_maquina,String nombre_compania,int estado )
     {
         this.setId(id);
         this.setFecha(fecha);
@@ -77,11 +77,11 @@ public class clsServicio_mantenimiento {
         this.revision = revision;
     }
 
-    public int getId_maquina() {
+    public String getId_maquina() {
         return id_maquina;
     }
 
-    public void setId_maquina(int id_maquina) {
+    public void setId_maquina(String id_maquina) {
         this.id_maquina = id_maquina;
     }
 

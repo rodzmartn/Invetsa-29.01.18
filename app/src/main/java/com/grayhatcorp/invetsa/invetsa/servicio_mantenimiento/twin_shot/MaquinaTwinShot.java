@@ -51,6 +51,7 @@ package com.grayhatcorp.invetsa.invetsa.servicio_mantenimiento.twin_shot;
         import java.io.File;
         import java.io.FileOutputStream;
         import java.util.Calendar;
+        import java.util.StringTokenizer;
 
 public class MaquinaTwinShot extends AppCompatActivity implements View.OnClickListener {//implements View.OnClickListener
     ArrayAdapter<String> adapter;
@@ -525,7 +526,7 @@ TextView tv_fecha;
             id_servicio=perfil.getInt("id_servicio_mantenimiento",1);
         }
 
-        int id_maquina=id_maquina_por_codigo(autoMaquina.getText().toString());
+        String id_maquina=concatenador_maquinas(autoMaquina.getText().toString());
 
         int id_compania=id_compania_por_nombre(autoCompania.getText().toString());
 
@@ -547,7 +548,7 @@ TextView tv_fecha;
 
             sw_tw = guardar_servicio_mantenimiento(id_servicio, tv_fecha.getText().toString(), horaIngreso.getText().toString(),
                     horaSalida.getText().toString(), codigo, revision, DIRECCION_FIRMA_JEFE, DIRECCION_FIRMA_INVETSA,
-                    String.valueOf(id_maquina), String.valueOf(id_tecnico), String.valueOf(id_compania), "TWIN SHOT",DIRECCION_FOTO_JEFE,
+                    id_maquina, String.valueOf(id_tecnico), String.valueOf(id_compania), "TWIN SHOT",DIRECCION_FOTO_JEFE,
                     autoPlantaEncubacion.getText().toString(),autoDireccion.getText().toString(),encargadoMaquinas.getText().toString(),
                     UltimaVisita.getText().toString(),JefePlanta.getText().toString());
             if (sw_tw) {
@@ -859,6 +860,30 @@ TextView tv_fecha;
         return id;
     }
 
+    private String concatenador_maquinas(String texto)
+    {
+        StringTokenizer tokens = new StringTokenizer(texto, ",");
+        String maquina, maquinas="";
+        int id=0;
+        while (tokens.hasMoreTokens() && id>-1) {
+            maquina = tokens.nextToken();
+            if (maquina.equals(" ")){
+                break;
+            }else{
+                id = id_maquina_por_codigo(maquina.trim());
+                if (maquinas.equals("")) {
+                    maquinas = String.valueOf(id);
+                }else{
+                    maquinas= maquinas + "," + id;
+                }
+            }
+        }
+        if (id == -1){
+            maquinas = "-1";
+        }
+        return maquinas;
+    }
+
     private int id_maquina_por_codigo(String texto)
     {int id=-1;
         SQLite admin = new SQLite(this,
@@ -869,7 +894,7 @@ TextView tv_fecha;
 
 
             String codigo= fila.getString(0);
-            if(codigo.equals("")==false && codigo.equals("0")==false )
+            if(!codigo.equals("") && !codigo.equals("0") )
             {
                 id=Integer.parseInt(codigo);
             }
@@ -1294,12 +1319,12 @@ TextView tv_fecha;
             e.printStackTrace();
         }
     }
-    private boolean verificar_datos_se(int id_maquina, int id_compania, int id_tecnico, String imei, Bitmap bm_firma_1, Bitmap bm_firma_2) {
+    private boolean verificar_datos_se(String id_maquina, int id_compania, int id_tecnico, String imei, Bitmap bm_firma_1, Bitmap bm_firma_2) {
         boolean sw = true;
         if (id_compania == -1) {
             sw = false;
             mensaje_ok_error("Por favor complete el campo de  " + Html.fromHtml("<b>COMPAÑIA</b>"));
-        } else if (id_maquina == -1) {
+        } else if (id_maquina.equals("-1")) {
             sw = false;
             mensaje_ok_error("Por favor complete el campo de  " + Html.fromHtml("<b>MAQUINA</b>"));
         } else if (bm_firma_1 == null) {

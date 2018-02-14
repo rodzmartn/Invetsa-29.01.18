@@ -435,13 +435,10 @@ public class Detalle_spravac extends AppCompatActivity implements View.OnClickLi
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         imei=telephonyManager.getDeviceId();
 
-        if(imei.equals("")==true)
+        if(imei.equals(""))
         {
             Toast.makeText(this,"Necesita dar permisos para Obtener el número de Imei.",Toast.LENGTH_SHORT).show();
         }
-
-
-
 
         bt_firmar_1.setOnClickListener(this);
         bt_firmar_2.setOnClickListener(this);
@@ -476,7 +473,6 @@ public class Detalle_spravac extends AppCompatActivity implements View.OnClickLi
                 showDialog(Time_id_salida);
             }
         });
-
 
 
         try {
@@ -523,7 +519,7 @@ public class Detalle_spravac extends AppCompatActivity implements View.OnClickLi
             autoCompania.setText(fila.getString(20));
 
 
-            autoMaquina.setText(Concatenador_maquinas(fila.getString(21)));
+            autoMaquina.setText(Concatenador_maquinas(id_maquina));
 
 
 

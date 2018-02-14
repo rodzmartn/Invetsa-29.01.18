@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -45,6 +46,7 @@ import com.grayhatcorp.invetsa.invetsa.sistema_integral_monitoreo.SistemaIntegra
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Calendar;
+import java.util.StringTokenizer;
 
 public class Detalle_twin_shot extends AppCompatActivity implements View.OnClickListener {//implements View.OnClickListener
     ArrayAdapter<String> adapter;
@@ -61,7 +63,8 @@ public class Detalle_twin_shot extends AppCompatActivity implements View.OnClick
     //Spinner scompania;
     TextView tv_fecha;
     Button horaIngreso,horaSalida;
-    AutoCompleteTextView autoCompania,autoMaquina,autoDireccion,autoPlantaEncubacion;
+    MultiAutoCompleteTextView autoMaquina;
+    AutoCompleteTextView autoCompania,/*autoMaquina,*/autoDireccion,autoPlantaEncubacion;
     EditText UltimaVisita,encargadoMaquinas,JefePlanta;
     EditText Observacion_InspecionVisual,Piezas_Cambiadas_Inspeccion,Observaciones_Funcionamiento,Frecuencia_de_Uso,Observaciones_Limpieza,CantidadAvesVacunadas;
     EditText bueno_bolas_acero,regular_bolas_acero,malo_bolas_acero;
@@ -153,7 +156,7 @@ public class Detalle_twin_shot extends AppCompatActivity implements View.OnClick
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         autoCompania=(AutoCompleteTextView)findViewById(R.id.autoCompania);
-        autoMaquina=(AutoCompleteTextView)findViewById(R.id.autoMaquina);
+        autoMaquina=(MultiAutoCompleteTextView)findViewById(R.id.autoMaquina);
         autoDireccion=(AutoCompleteTextView)findViewById(R.id.autoDireccion);
         autoPlantaEncubacion=(AutoCompleteTextView)findViewById(R.id.autoPlantaEncubacion);
         encargadoMaquinas=(EditText)findViewById(R.id.TextViewEncargado);
@@ -493,7 +496,8 @@ public class Detalle_twin_shot extends AppCompatActivity implements View.OnClick
             String estado =(fila.getString(19));
 
             autoCompania.setText(fila.getString(20));
-            autoMaquina.setText(fila.getString(21));
+            //autoMaquina.setText(fila.getString(21));
+            autoMaquina.setText(Concatenador_maquinas(id_maquina));
 
             bm_firma_1=imagen_en_vista(firma_jefe);
             bm_firma_2=imagen_en_vista(firma_invetsa);
@@ -1051,6 +1055,44 @@ public class Detalle_twin_shot extends AppCompatActivity implements View.OnClick
             if(codigo.equals("")==false && codigo.equals("0")==false )
             {
                 id=Integer.parseInt(codigo);
+            }
+
+        }
+        bd.close();
+        return id;
+    }
+
+    private String Concatenador_maquinas(String ids)   // Con esto tomamos los ids y los transformamos a maquinas
+    {
+        StringTokenizer tokens = new StringTokenizer(ids, ",");
+        String maquina="", maquinas = "";
+        while (tokens.hasMoreTokens()) {
+            maquina = tokens.nextToken();
+            maquina= id_por_maquina(maquina);
+            if (!maquina.equals("") && !maquina.equals("-1"))
+            {
+                if (maquinas.equals("")) {
+                    maquinas = maquina.trim();
+                } else {
+                    maquinas = maquinas + "," + maquina.trim();
+                }
+            }
+        }
+        return maquinas;
+    }
+
+    private String id_por_maquina(String texto)
+    {
+        String id="-1";
+        SQLite admin = new SQLite(this,
+                "invetsa", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        Cursor fila = bd.rawQuery("select codigo from maquina where id='"+texto+"'", null);
+        if (fila.moveToFirst()) {  //si ha devuelto 1 fila, vamos al primero (que es el unico)
+            String codigo= fila.getString(0);
+            if(!codigo.equals("") && !codigo.equals("0") )
+            {
+                id=codigo;
             }
 
         }

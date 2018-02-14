@@ -244,7 +244,9 @@ public class SQLite extends SQLiteOpenHelper {
                 "nro_mojados integer default 0," +
                 "nro_mala_posicion integer default 0," +
                 "nro_pollos_vacunados_correctamente integer default 0," +
-                "indice_eficiencia integer default 0," +
+                "indice_eficiencia decimal(10,2) default 0," +
+                "sumatoria integer default 0," +
+                "promedio decimal(10,2) default 0," +
                 "id_hoja_verificacion integer," +
                 "id_vacunador integer," +
                 "imei text," +
@@ -569,7 +571,7 @@ public class SQLite extends SQLiteOpenHelper {
                 "nro_mojados integer default 0," +
                 "nro_mala_posicion integer default 0," +
                 "nro_pollos_vacunados_correctamente integer default 0," +
-                "indice_eficiencia integer default 0," +
+                "indice_eficiencia decimal(10,2) default 0," +
                 "id_hoja_verificacion integer," +
                 "id_vacunador integer," +
                 "imei text," +

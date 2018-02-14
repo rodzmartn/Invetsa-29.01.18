@@ -338,7 +338,7 @@ public class Detalle_Hoja_verificacion extends AppCompatActivity implements View
         } catch (Exception e)
         {
             Log.e("Detalle",""+e);
-            //finish();
+            finish();
         }
 
 
@@ -928,7 +928,10 @@ public void cargar_hoja_verificacion(int id_hoja)
                 String nro_mojados=fila.getString(6);
                 String nro_mala_posicion=fila.getString(7);
                 String nro_pollos_vacunados_correctamente=fila.getString(8);
-                String id_vacunador=fila.getString(10);
+                String indice_eficiencia=fila.getString(9);
+                //String id_vacunador=fila.getString(10);
+                String promedio = fila.getString(10);
+                String sumatoria = fila.getString(11);
                 String nombre_vacunador=fila.getString(13);
 
 
@@ -985,10 +988,20 @@ public void cargar_hoja_verificacion(int id_hoja)
 * modificacion de hoja de verificacion....
 * */
                         EditText et_eficiencia=new EditText(this);
-                        et_eficiencia.setText("0");
+                        et_eficiencia.setText(indice_eficiencia);
                         et_eficiencia.setWidth(100);
                         et_eficiencia.setInputType(InputType.TYPE_CLASS_NUMBER);
 
+                        EditText et_promedio =new EditText(this);
+                        et_eficiencia.setText(promedio);
+                        et_eficiencia.setWidth(100);
+                        et_eficiencia.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+
+                        EditText et_sumatoria =new EditText(this);
+                        et_eficiencia.setText(sumatoria);
+                        et_eficiencia.setWidth(100);
+                        et_eficiencia.setInputType(InputType.TYPE_CLASS_NUMBER);
 
 
                         tableRow.addView(nombre);
@@ -1001,6 +1014,8 @@ public void cargar_hoja_verificacion(int id_hoja)
                         tableRow.addView(et_mala_posicion);
                         tableRow.addView(et_vacunados_correctamente);
                         tableRow.addView(et_eficiencia);
+                        tableRow.addView(et_sumatoria);
+                        tableRow.addView(et_promedio);
 
 
                         tb_control_indice.addView(tableRow);

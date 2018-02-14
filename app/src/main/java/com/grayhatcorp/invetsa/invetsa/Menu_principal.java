@@ -287,7 +287,7 @@ public class Menu_principal extends AppCompatActivity  implements View.OnClickLi
             cargar_lista_en_granja(granja);
             cargar_lista_en_maquina(maquina);
             cargar_lista_en_vacunador(vacunador);
-            cargar_lista_indice_eficiencia(indice);
+            //cargar_lista_indice_eficiencia(indice);
 
             Log.w("SQLite","Se completo de cargar a la base de datos.");
         }catch (Exception e)
@@ -435,7 +435,7 @@ public class Menu_principal extends AppCompatActivity  implements View.OnClickLi
         bd.close();
     }
 
-    private void cargar_lista_indice_eficiencia(JSONArray indice)
+    /*private void cargar_lista_indice_eficiencia(JSONArray indice)
     {
 
         SQLite admin = new SQLite(this,
@@ -455,7 +455,7 @@ public class Menu_principal extends AppCompatActivity  implements View.OnClickLi
             }
         }
         bd.close();
-    }
+    }*/
     private void cargar_lista_en_vacunador(JSONArray vacunador)
     {
         SQLite admin = new SQLite(this,
